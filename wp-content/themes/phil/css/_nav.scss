@@ -1,0 +1,224 @@
+$duration: .3s;
+$size : 100%;
+$toggled-size : .75;
+$content-bg : black;
+
+.navicon-button {
+  display: inline-block;
+  position: relative;
+  padding: 2.0625rem 1.5rem;
+  -webkit-transition: $duration/2;
+  transition: $duration/2;
+  cursor: pointer;
+  user-select: none;
+  opacity: 1;
+  -webkit-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+
+  .navicon:before, .navicon:after {
+    -webkit-transition: $duration/2;
+    transition: $duration/2;
+  }
+}
+
+.navicon {
+  position: relative;
+  width: 30px;
+  height: .3125rem;
+  background: $content-bg;
+  -webkit-transition: $duration/2;
+  transition: $duration/2;
+  border-radius: 2.5rem;
+
+  &:before, &:after {
+    display: block;
+    content: "";
+    height: .3125rem;
+    width: 30px;
+    background: $content-bg;
+    position: absolute;
+    z-index: -1;
+    -webkit-transition: $duration $duration/2;
+    transition: $duration $duration/2;
+    border-radius: 1rem;
+  }
+
+  &:before { top: 8px; }
+  &:after { top: -8px; }
+}
+
+.open:not(.steps) .navicon:before,
+.open:not(.steps) .navicon:after {
+  top: 0 !important;
+}
+
+.open .navicon:before,
+.open .navicon:after {
+  -webkit-transition: $duration/2;
+  transition: $duration/2;
+}
+
+/* Minus */
+.open { 
+  -webkit-transform: scale($toggled-size);
+  transform: scale($toggled-size);
+}
+
+/* × and + */
+.open.plus,
+.open.x {
+  .navicon {
+    background: transparent;
+
+    &:before {
+      -webkit-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+    }
+    &:after {
+      -webkit-transform: rotate(45deg);
+      transform: rotate(45deg);
+    }
+  }
+}
+.open.plus { 
+  -webkit-transform: scale($toggled-size) rotate(45deg);
+  transform: scale($toggled-size) rotate(45deg);
+}
+
+
+// /* Base ================== */
+// * { box-sizing: border-box; }
+
+// section {
+
+//   /* Smoother animations */
+//   & *,
+//   & *:before,
+//   & *:after {
+//    transform: translate3d(0,0,0);
+//   }
+// }
+
+nav {
+  text-align: right;
+  user-select: none;
+  z-index: 11;
+  right: 10px;
+  top: 17px;
+  position: fixed;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.sliding-panel-content {  
+  $action-color: #477DCA !default;
+  $dark-gray: #333 !default;
+  $sliding-panel-border-color: $dark-gray;
+  $sliding-panel-background: lighten($sliding-panel-border-color, 5%);
+  $sliding-panel-color: #fff;
+  $sliding-panel-border: 1px solid $sliding-panel-border-color;
+  $sliding-panel-background-hover: $action-color;
+  $sliding-panel-color-hover: #fff;
+  $sliding-panel-background-focus: lighten($sliding-panel-background, 5%);
+
+  @include position(fixed, 60px auto 0px 0px);
+  @include size(100% 235px);
+  @include transform(translateX(-100%));
+  @include transition(all 0.25s linear);
+  background: white;
+  padding: 10px 15px 10px;
+  z-index: 11;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  -webkit-box-shadow: 0px 20px 20px 0px rgba(255,255,255,1);
+  -moz-box-shadow: 0px 20px 20px 0px rgba(255,255,255,1);
+  box-shadow: 0px 20px 20px 0px rgba(255,255,255,1);
+
+  ul {
+    padding: 0;
+    margin: 0;
+    border: 0;
+  }
+
+  li {
+    list-style: none;
+  }
+
+  li a {
+    color: white;
+    text-decoration: none;
+    font-family: inherit;
+    text-transform: uppercase;
+
+    &:focus {
+      //background-color: $sliding-panel-background-focus;
+    }
+
+    &:hover {
+      //background-color: white;
+      //color: black;
+    }
+  }
+
+  &.is-visible {
+    @include transform(translateX(0));
+  }
+  .nav-buffer{
+    //background: rgba(0,0,0,.5);
+    height: 100%;
+  }
+}
+
+.sliding-panel-fade-screen {
+  @include position(fixed, 60px 0px 0px 0px);
+  @include transition;
+  background: white;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 10;
+
+  &.is-visible {
+    opacity: 0.8;
+    visibility: visible;
+  }
+}
+
+.sliding-panel-button {
+  // @include button(flat, #477DCA);
+  padding: 10px 7px;
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+  outline: none;
+  z-index: 4;
+
+  img {
+    height: 1.3em;
+  }
+}
+
+.sliding-panel-content{
+  @include media($mobile){
+    .bio, input, .social{
+      display: block;
+    }
+    .bio{
+      color: black;
+      text-shadow: 0;
+    }
+    form{
+      width: 100%;
+    }
+    ul{
+      //background-color: rgba(0,0,0,0.5);
+    }
+    .social{
+      background-color: white;
+      height: 34px;
+      border: 2px solid black;
+      margin-bottom: 10px;
+      li{
+        padding-top: 5px;
+      }
+    }
+  }
+}
