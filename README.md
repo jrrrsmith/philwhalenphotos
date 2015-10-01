@@ -1,7 +1,7 @@
 # philwhalenphotos
 A portfolio website for the photography work of Phil Whalen
 
-This site was built by Jeremy Smith, with the help of the following open source plugins and frameworks:
+This site was built by Jeremy Smith, with the help of the following open source technologies, plugins, and frameworks:
 
 Bourbon.io/ Neat/ Refills - http://bourbon.io/
 
