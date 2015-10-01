@@ -5,6 +5,20 @@ html {
 *, *::after, *::before {
   box-sizing: inherit; }
 
+body {
+  background-color: white;
+  color: black;
+  font-family: "Source Code Pro"; }
+
+#body {
+  margin-left: 300px;
+  padding: 0 15px;
+  float: left; }
+  @media screen and (max-width: 700px) {
+    #body {
+      margin-left: 0;
+      margin-top: 42px; } }
+
 .navicon-button {
   display: inline-block;
   position: relative;
@@ -171,11 +185,6 @@ nav {
     .sliding-panel-content .social li {
       padding-top: 5px; } }
 
-body {
-  background-color: white;
-  color: black;
-  font-family: "Source Code Pro"; }
-
 header {
   position: fixed;
   top: 0;
@@ -268,35 +277,6 @@ header {
       header .bio a .last {
         margin-right: 3px; }
 
-#body {
-  margin-left: 300px;
-  padding: 0 15px;
-  float: left; }
-  @media screen and (max-width: 700px) {
-    #body {
-      margin-left: 0;
-      margin-top: 42px; } }
-
-.bio-img-wrap {
-  max-width: 68em;
-  margin-left: auto;
-  margin-right: auto; }
-  .bio-img-wrap::after {
-    clear: both;
-    content: "";
-    display: table; }
-  .bio-img-wrap img {
-    width: 100%; }
-
-.bio-wrap {
-  max-width: 68em;
-  margin-left: auto;
-  margin-right: auto; }
-  .bio-wrap::after {
-    clear: both;
-    content: "";
-    display: table; }
-
 .photos-page {
   margin-top: 18px; }
   .photos-page ul {
@@ -370,6 +350,26 @@ header {
       .photos-page .album-grid li img {
         width: 100%;
         vertical-align: bottom; }
+
+.bio-img-wrap {
+  max-width: 68em;
+  margin-left: auto;
+  margin-right: auto; }
+  .bio-img-wrap::after {
+    clear: both;
+    content: "";
+    display: table; }
+  .bio-img-wrap img {
+    width: 100%; }
+
+.bio-wrap {
+  max-width: 68em;
+  margin-left: auto;
+  margin-right: auto; }
+  .bio-wrap::after {
+    clear: both;
+    content: "";
+    display: table; }
 
 .photo-grid {
   max-width: 68em;

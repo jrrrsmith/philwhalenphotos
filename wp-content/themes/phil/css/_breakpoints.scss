@@ -1,0 +1,9 @@
+$icon-width: 1.25em;
+$two-col: 1080px;
+$ipad-landscape: 1024px;
+$ipad-portrait: 768px;
+$phone: 700px;
+$first: new-breakpoint(max-width $two-col 12);
+$titles: new-breakpoint(max-width $ipad-landscape 12);
+$ipad: new-breakpoint(max-width $ipad-portrait 12);
+$mobile: new-breakpoint(max-width $phone 12);

@@ -1,0 +1,16 @@
+body{
+	background-color: white;
+	color: black;
+	//min-height: 1000px;
+	font-family: 'Source Code Pro', ;
+}
+
+#body{
+	margin-left: 300px;
+	padding: 0 15px;
+	float: left;
+	@include media($mobile){
+		margin-left: 0;
+		margin-top: 42px;
+	}
+}

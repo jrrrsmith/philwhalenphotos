@@ -1,0 +1,9 @@
+.bio-img-wrap{
+	@include outer-container;
+	img{
+		width: 100%;
+	}
+}
+.bio-wrap{
+	@include outer-container;
+}

@@ -1,0 +1,50 @@
+.photo-grid{
+	@include outer-container;
+	ul{
+		padding-top: 35px;
+		@include media($mobile){
+			padding-top: 50px;
+		}
+	}
+	li{
+		width: 32%;
+		margin-right: 1%;
+		margin-bottom: 1%;
+		float: left;
+		overflow: hidden;
+		position: relative;
+		&:nth-child(3n+3){
+			margin-right: 0;
+		}
+		@include media($first){
+			width: 49.5%;
+			&:nth-child(3n+3){
+				margin-right: 1%;
+			}
+			&:nth-child(2n+2){
+				margin-right: 0;
+			}
+		}
+		@include media($ipad){
+			width: 100%;
+			margin-right: 0;
+			margin-bottom: 10px;
+			&:nth-child(3n+3){
+				margin-right: 0;
+			}
+		}
+		img{
+			width: 100%;
+			vertical-align: bottom;
+			transition: all .4s ease-in-out;
+			&:hover{
+				-webkit-transform: scale(1.03);
+				transform: scale(1.03);
+				@include media($mobile){
+					-webkit-transform: none;
+					transform: none;
+				}
+			}
+		}
+	}
+}

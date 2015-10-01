@@ -1,0 +1,18 @@
+.mobile-only{
+	display: none;
+	@include media($mobile){
+		display: inline-block;
+	}
+}
+
+.mobile-menu {
+	li{
+		display: block;
+	}
+	input{
+		border-radius: 0;
+	}
+	#searchsubmit{
+		background-color: rgb(191,191,191);
+	}
+}
