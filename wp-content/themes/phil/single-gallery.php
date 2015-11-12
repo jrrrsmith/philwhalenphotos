@@ -2,7 +2,7 @@
 
 <div class="photos-page pages">
     <div class="photo-grid">
-        <h1 class="album-title"><a href="http://www.philwhalenphotos.com/gallery">ALBUMS</a> >> <?php the_title(); ?></h1>
+        <h1 class="album-title"><a href="http://www.philwhalenphotos.com/">ALBUMS</a> >> <?php the_title(); ?></h1>
     <?php 
 
 $images = get_field('gallery');
