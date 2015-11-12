@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 add_theme_support('post-thumbnails');
 
@@ -20,6 +20,29 @@ function init_remove_support(){
     remove_post_type_support( $post_type, 'editor');
 }
 
+add_action("pre_get_posts", "custom_front_page");
+function custom_front_page($wp_query){
+    //Ensure this filter isn't applied to the admin area
+    if(is_admin()) {
+        return;
+    }
+
+    if($wp_query->get('page_id') == get_option('page_on_front')):
+
+        $wp_query->set('post_type', 'gallery');
+        $wp_query->set('page_id', ''); //Empty
+
+        //Set properties that describe the page to reflect that
+        //we aren't really displaying a static page
+        $wp_query->is_page = 0;
+        $wp_query->is_singular = 0;
+        $wp_query->is_post_type_archive = 1;
+        $wp_query->is_archive = 1;
+
+    endif;
+
+}
+
 
 //Page Slug Body Class
 // function add_slug_body_class( $classes ) {
@@ -31,7 +54,7 @@ function init_remove_support(){
 // }
 // add_filter( 'body_class', 'add_slug_body_class' );
 
-//add_filter('mse_is_image_clickable', 'false'); 
+//add_filter('mse_is_image_clickable', 'false');
 
 
 function custom_post_type() {

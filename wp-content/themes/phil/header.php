@@ -50,8 +50,8 @@
 	  	</ul>
 	  	<?php echo do_shortcode("[mse-search-form]"); ?>
 	  	<!-- <input placeholder="Search"></input> -->
-	  	<h2 class="bio">>>><a href="http://www.philwhalenphotos.com">Bi<span class="last">o</span></a><<<</h2>
-	  	<h2 class="bio">>>><a href="http://www.philwhalenphotos.com/gallery">Galler<span class="last">y</span></a><<<</h2>
+	  	<h2 class="bio">>>><a href="http://www.philwhalenphotos.com/bio">Bi<span class="last">o</span></a><<<</h2>
+	  	<h2 class="bio">>>><a href="http://www.philwhalenphotos.com">Galler<span class="last">y</span></a><<<</h2>
 	  	<section class="mobile-only">
 				<nav>
 					<a class="navicon-button x js-menu-trigger sliding-panel-button">
@@ -74,11 +74,16 @@
 		  	</ul>
 			  <ul class="mobile-menu">
 			  	<?php echo do_shortcode("[mse-search-form]"); ?>
-			  	<li><h2 class="bio">>>><a href="http://www.philwhalenphotos.com">Bi<span class="last">o</span></a><<<</h2></li>
-			  	<li><h2 class="bio">>>><a href="http://www.philwhalenphotos.com/gallery">Galler<span class="last">y</span></a><<<</h2></li>
+			  	<li><h2 class="bio">>>><a href="http://www.philwhalenphotos.com/bio">Bi<span class="last">o</span></a><<<</h2></li>
+			  	<li><h2 class="bio">>>><a href="http://www.philwhalenphotos.com">Galler<span class="last">y</span></a><<<</h2></li>
 			  </ul>
 			  <div class="nav-buffer"></div>
 			</nav>
+			<div class="header-bottom">
+				<span class="copy">&copy;<?php echo date('Y'); ?> <?php bloginfo('title'); ?>, All Rights Reserved.</span>
+				<span class="jrrrsmith">Site by <a href="http://www.jrrrsmith.com" target="blank">
+					JRRRSMITH</a></span>
+			</div>
 			<div class="js-menu-screen sliding-panel-fade-screen"></div>
 		</header>
 		<section id="body">

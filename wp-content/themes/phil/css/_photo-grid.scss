@@ -36,10 +36,10 @@
 		img{
 			width: 100%;
 			vertical-align: bottom;
-			transition: all .4s ease-in-out;
+			transition: all 10s ease-in-out;
 			&:hover{
-				-webkit-transform: scale(1.03);
-				transform: scale(1.03);
+				-webkit-transform: rotate(45deg) scale(2.5);
+				transform: rotate(45deg) scale(2.5);
 				@include media($mobile){
 					-webkit-transform: none;
 					transform: none;
